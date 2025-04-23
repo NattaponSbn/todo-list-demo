@@ -3,7 +3,7 @@ import TodoForm from '../components/TodoForm';
 import { TodoItem, useTodos } from '../context/TodoContext';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-const AddTodoPage: React.FC = () => {
+const ManageTodoPage: React.FC = () => {
     const { id, action } = useParams();
     const { todos, addTodo, updateTodo } = useTodos();
     const todo = todos.find((t) => t.id === Number(id));
@@ -38,11 +38,9 @@ const AddTodoPage: React.FC = () => {
 
     return (
         <div className="p-6 max-w-md mx-auto border shadow rounded bg-white">
-            <h1 className="text-2xl font-bold mb-4">{ isAdd ? 'Add Task' : 'Edit Task' }</h1>
             <div className="flex justify-between mb-4">
                 <div>
-                    <h5 className="font-bold mb-1">My Tasks</h5>
-                    <p className="text-xs text-muted">You have 1 tasks left!</p>
+                <h1 className="text-2xl font-bold mb-4">{ isAdd ? 'Add Task' : 'Edit Task' }</h1>
                 </div>
                 <div className="flex items-center">
                     <Link to="/" className="bg-secondary text-black text-sm px-8 py-2 border-[#c9c9c9] rounded">
@@ -51,9 +49,9 @@ const AddTodoPage: React.FC = () => {
                 </div>
 
             </div>
-            <TodoForm onSubmit={handleSubmitTodo} />
+            <TodoForm onSubmit={handleSubmitTodo} initialData={todoItem!} />
         </div>
     );
 };
 
-export default AddTodoPage;
+export default ManageTodoPage;

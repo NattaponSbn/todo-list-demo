@@ -28,16 +28,15 @@
 // src/App.tsx
 import { Routes, Route, Navigate } from "react-router-dom";
 import TodoListPage from "./pages/TodoListPage";
-import AddTodoPage from "./pages/AddTodoPage";
-import EditTodoPage from "./pages/EditTodoPage";
+import ManageTodoPage from "./pages/ManageTodoPage";
 
 const App = () => {
   return (
     <div className="px-[500px] py-[150px]">
       <Routes>
         <Route path="/" element={<TodoListPage />} />
-        <Route path="/add" element={<AddTodoPage />} />
-        <Route path="/edit/:id" element={<EditTodoPage />} />
+        <Route path="/manage/:action" element={<ManageTodoPage />} />
+        <Route path="/manage/:id/:action" element={<ManageTodoPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

@@ -57,8 +57,8 @@ const TodoForm: React.FC<TodoFormProps> = ({ onSubmit, initialData }) => {
                 {formik.errors.description && formik.touched.description && <div className="text-red-500">{formik.errors.description}</div>}
             </div>
 
-            <button type="submit" className="btn">
-                {initialData ? 'Edit Todo' : 'Add Todo'}
+            <button type="submit" className="btn bg-primary w-full text-white text-sm px-8 py-2 border rounded">
+                {initialData ? 'Edit Task' : 'Add Task'}
             </button>
         </form>
     );

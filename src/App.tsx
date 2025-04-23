@@ -32,7 +32,7 @@ import ManageTodoPage from "./pages/ManageTodoPage";
 
 const App = () => {
   return (
-    <div className="px-[500px] py-[150px]">
+    <div className="py-60">
       <Routes>
         <Route path="/" element={<TodoListPage />} />
         <Route path="/manage/:action" element={<ManageTodoPage />} />

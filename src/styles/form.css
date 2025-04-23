@@ -1,0 +1,96 @@
+form label {
+    @apply text-black text-sm font-medium;
+}
+
+
+form input, form select {
+    @apply font-medium text-sm !important;
+}
+
+.form-label {
+    @apply text-black text-sm font-medium;
+}
+
+.form-label--required::after {
+    content: "*";
+    color: #ff0b0b;
+    margin-left: 2px;
+  }
+
+.form-input:disabled, .form-input:disabled, 
+.form-select:disabled, .form-select:disabled,
+.form-radio:disabled, .form-radio:disabled,
+.form-multiselect:disabled, .form-multiselect:disabled,
+.form-textarea:disabled, .form-textarea:disabled {
+    @apply disabled:pointer-events-none disabled:bg-[#e1e8f0] dark:disabled:bg-[#1b2e4b] cursor-not-allowed
+}
+
+.form-input, .form-textarea, .form-select, .form-multiselect {
+    @apply pl-2 pr-2 font-medium !important;
+}
+
+.form-select2__control--is-disabled {
+    @apply bg-[#e1e8f0] !important;
+}
+
+.form-select2__single-value--is-disabled {
+    @apply text-black font-medium text-sm !important ; 
+}
+
+.form-radio:disabled:checked:hover {
+    @apply text-[#e1e8f0] pointer-events-none !important;
+}
+
+.form-input,
+.form-textarea,
+.form-select,
+.form-multiselect {
+    @apply w-full rounded-md border border-[#dedede] bg-white px-4 py-2 text-sm font-semibold text-black !outline-none focus:border-primary focus:ring-transparent;
+}
+
+.form-input-lg,
+.form-textarea-lg,
+.form-select-lg,
+.form-multiselect-lg {
+    @apply py-2.5 text-base;
+}
+.form-input-sm,
+.form-textarea-sm,
+.form-select-sm,
+.form-multiselect-sm {
+    @apply py-1.5 text-xs;
+}
+
+.has-error .form-input,
+.has-error .form-textarea,
+.has-error .form-select,
+.has-error .form-multiselect,
+.has-error .multiselect__tags,
+.has-error .form-select2__control {
+    @apply border-danger bg-danger/[0.08] text-danger placeholder-danger/70 focus:border-danger;
+}
+
+.has-error .form-label,
+.has-error .form-help,
+.has-error .form-icon,
+.has-error .multiselect__placeholder,
+.has-error .form-select2__placeholder {
+    @apply text-danger;
+}
+.has-error .multiselect__input {
+    @apply bg-[#F7ECF0] !placeholder-danger/70;
+}
+.has-error .multiselect__tags:hover,
+.has-error .form-checkbox, 
+.has-error .form-radio {
+    @apply border-danger;
+}
+
+
+ /* checkbox & radio */
+ .form-radio,
+ .form-checkbox {
+     @apply h-5 w-5 cursor-pointer rounded border-2 border-primary bg-transparent text-primary !shadow-none !outline-none !ring-0 !ring-offset-0 checked:bg-[length:90%_90%] disabled:cursor-not-allowed disabled:bg-[#eee] ltr:mr-1.5 rtl:ml-1.5
+   dark:border-[#253b5c] dark:checked:border-transparent dark:disabled:bg-[#1b2e4b];
+ }
+

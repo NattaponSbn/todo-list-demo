@@ -1,3 +1,9 @@
+/* custom form*/
+@import './form.css';
+
+/* custom input*/
+@import './input.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -37,13 +37,13 @@ const ManageTodoPage: React.FC = () => {
     };
 
     return (
-        <div className="p-6 max-w-md mx-auto border shadow rounded bg-white">
+        <div className="p-6 max-w-xl mx-auto border shadow rounded bg-white">
             <div className="flex justify-between mb-4">
                 <div>
                 <h1 className="text-2xl font-bold mb-4">{ isAdd ? 'Add Task' : 'Edit Task' }</h1>
                 </div>
                 <div className="flex items-center">
-                    <Link to="/" className="bg-secondary text-black text-sm px-8 py-2 border-[#c9c9c9] rounded">
+                    <Link to="/" className="bg-secondary text-black text-sm px-8 py-2 border border-[#c9c9c9] rounded">
                         Backward
                     </Link>
                 </div>

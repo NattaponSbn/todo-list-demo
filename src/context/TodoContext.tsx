@@ -2,9 +2,11 @@
 import { createContext, useContext, useState } from "react";
 
 export interface TodoItem {
+    isChecked?: boolean;
     id?: number;
     title: string; 
-    description: string
+    description: string;
+    dueDate: string;
 }
 
 type TodoContextType = {
@@ -20,10 +22,10 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
   const [todos, setTodos] = useState<TodoItem[]>([]);
 
   const addTodo = (item: TodoItem) =>
-    setTodos((prev) => [...prev, { id: Date.now(), title: item.title, description: item.description }]);
+    setTodos((prev) => [...prev, { id: Date.now(), title: item.title, description: item.description, dueDate: item.dueDate }]);
 
   const updateTodo = (id: number, item: TodoItem) =>
-    setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, title: item.title, description: item.description } : t)));
+    setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, title: item.title, description: item.description, dueDate: item.dueDate } : t)));
 
   const deleteTodo = (id: number) =>
     setTodos((prev) => prev.filter((t) => t.id !== id));

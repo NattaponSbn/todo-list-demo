@@ -47,7 +47,7 @@ Clone โครงการจาก GitHub และติดตั้ง depen
 #### `npm install`
 
 ## รันคำสั่ง:
-#### npm start`
+#### `npm start`
 ระบบจะเปิดใช้งานที่ [http://localhost:3000](http://localhost:3000)
 
 ## Demo

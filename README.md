@@ -25,19 +25,19 @@
 
 ## เทคโนโลยีที่ใช้
 
-**Frontend:** React, TypeScript, React Router, Tailwind CSS
+- **Frontend:** React, TypeScript, React Router, Tailwind CSS
 
-**State Management:** React Context API
+- **State Management:** React Context API
 
-**การจัดการวันที่:** Date-fns สำหรับการฟอร์แมตวันที่
+- **การจัดการวันที่:** Date-fns สำหรับการฟอร์แมตวันที่
 
-**ไอคอน:** Lucide Icons
+- **ไอคอน:** Lucide Icons
 
-**การตรวจสอบฟอร์ม:** Formik, Yup
+- **การตรวจสอบฟอร์ม:** Formik, Yup
 
-**การเพิ่มฟังก์ชัน UI:** Tippy.js สำหรับ Tooltip
+- **การเพิ่มฟังก์ชัน UI:** Tippy.js สำหรับ Tooltip
 
-**Dialog ยืนยัน:** Dialog Service
+- **Dialog ยืนยัน:** Dialog Service
 
 ## การติดตั้ง
 
@@ -45,6 +45,8 @@ Clone โครงการจาก GitHub และติดตั้ง depen
 ### `git clone https://github.com/NattaponSbn/todo-list-demo.git`
 ### `cd todo-list-demo`
 ### `npm install`
+
+
 
 **รันคำสั่ง:**
 ### `npm start`

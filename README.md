@@ -42,13 +42,11 @@
 ## การติดตั้ง
 
 Clone โครงการจาก GitHub และติดตั้ง dependencies:
-
-### `git clone https://github.com/NattaponSbn/todo-list-demo.git` [Git Hub Todo List Demo](https://github.com/NattaponSbn/todo-list-demo.git)
+### `git clone https://github.com/NattaponSbn/todo-list-demo.git`
 ### `cd todo-list-demo`
 ### `npm install`
 
-
-รันคำสั่ง:
+**รันคำสั่ง:**
 ### `npm start`
 ระบบจะเปิดใช้งานที่ [http://localhost:3000](http://localhost:3000)
 

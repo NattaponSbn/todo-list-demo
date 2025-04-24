@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# ระบบจัดการงาน (To-Do List)
+เป็นระบบจัดการงาน (To-Do List) ที่พัฒนาโดยใช้ React ที่ช่วยให้ผู้ใช้สามารถจัดการงานต่าง ๆ ได้ เช่น การเพิ่ม แก้ไข ลบ และการตรวจสอบสถานะของงาน
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ความต้องการ
 
-## Available Scripts
+1. **แสดงข้อมูลรวมของ Task:** ระบบจะแสดงข้อมูลสรุปของงานทั้งหมด โดยแบ่งแยกสถานะ "ดำเนินการเสร็จสิ้น" และ "ยังไม่ดำเนินการ"
 
-In the project directory, you can run:
+2. **เพิ่ม Task:** ผู้ใช้สามารถกดปุ่ม "Add Task" เพื่อไปยังหน้าสำหรับเพิ่มข้อมูลงานใหม่
 
+3. **การตรวจสอบข้อมูล:** ฟอร์ม "Add Task" และ "Edit Task" จะมีการตรวจสอบข้อมูลที่จำเป็น (เครื่องหมาย * จะบอกว่าเป็นข้อมูลที่ต้องการ) และแสดงข้อความแจ้งเตือนหากข้อมูลไม่ครบถ้วน
+
+4. **แก้ไข Task:** ผู้ใช้สามารถคลิกปุ่ม "Edit Task" (ไอคอนดินสอ) เพื่อไปยังหน้าแก้ไขและแสดงข้อมูลปัจจุบันให้เป็นข้อมูลเริ่มต้น
+
+5. **ลบ Task:** ผู้ใช้สามารถลบงานได้โดยคลิกปุ่ม "Delete" (ไอคอนถังขยะ) และจะแสดงข้อความยืนยันเพื่อให้ผู้ใช้ยืนยันก่อนทำการลบ เมื่อข้อมูลถูกลบออกแล้ว ระบบจะแสดงข้อมูลล่าสุดโดยไม่มีข้อมูลที่ถูกลบแล้ว
+
+6. **สถานะของ Task:** ระบบจะแบ่งงานออกเป็น "ดำเนินการเสร็จสิ้น" และ "ยังไม่ดำเนินการ" และแสดงสถานะในหน้าแสดงข้อมูลรวม
+
+## ฟีเจอร์
+
+- **การจัดการงาน:** เพิ่ม แก้ไข ลบ และทำเครื่องหมายงานที่เสร็จแล้ว
+
+- **การตรวจสอบข้อมูล:** ฟอร์มมีการตรวจสอบข้อมูลที่จำเป็นก่อนการบันทึก
+
+- **การออกแบบที่ตอบสนอง:** ระบบออกแบบให้สามารถใช้งานได้ดีทั้งในหน้าจอขนาดเล็กและขนาดใหญ่
+
+## เทคโนโลยีที่ใช้
+
+**Frontend:** React, TypeScript, React Router, Tailwind CSS
+
+**State Management:** React Context API
+
+**การจัดการวันที่:** Date-fns สำหรับการฟอร์แมตวันที่
+
+**ไอคอน:** Lucide Icons
+
+**การตรวจสอบฟอร์ม:** Formik, Yup
+
+**การเพิ่มฟังก์ชัน UI:** Tippy.js สำหรับ Tooltip
+
+**Dialog ยืนยัน:** Dialog Service
+
+## การติดตั้ง
+
+Clone โครงการจาก GitHub และติดตั้ง dependencies:
+
+### `git clone https://github.com/NattaponSbn/todo-list-demo.git` [Git Hub Todo List Demo](https://github.com/NattaponSbn/todo-list-demo.git)
+### `cd todo-list-demo`
+### `npm install`
+
+
+รันคำสั่ง:
 ### `npm start`
+ระบบจะเปิดใช้งานที่ [http://localhost:3000](http://localhost:3000)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Demo
+คุณสามารถทดลองใช้งานระบบได้ที่ [Todo List Demo Web](https://todo-list-demo-beta.vercel.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## การใช้งาน
 
-### `npm test`
+**เพิ่ม Task:** คลิกปุ่ม "Add Task" เพื่อเปิดฟอร์มและกรอกข้อมูลที่จำเป็น จากนั้นกดปุ่มบันทึก
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**แก้ไข Task:** คลิกที่ไอคอนดินสอข้างๆ งานเพื่อเข้าสู่หน้าการแก้ไข
 
-### `npm run build`
+**ลบ Task:** คลิกที่ไอคอนถังขยะข้างๆ งานเพื่อทำการลบ โดยจะมีข้อความยืนยันการลบก่อน
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**ดูสถานะของ Task:** งานจะถูกแยกตามสถานะ "ดำเนินการเสร็จสิ้น" หรือ "ยังไม่ดำเนินการ"

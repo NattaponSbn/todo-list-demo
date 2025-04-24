@@ -3,39 +3,55 @@ import { Link, useNavigate } from "react-router-dom";
 import { TodoItem, useTodos } from "../context/TodoContext";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import DateUtils from "../common/utils/date-utils";
 import { Pencil, Trash } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Helmet } from 'react-helmet';
+import { DialogService } from "../core/services/utils/dialog.service";
 
 const TodoListPage = () => {
   const { todos, updateTodo, deleteTodo } = useTodos();
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const dialogService = DialogService;
 
-  const handleChangeChecked = (todo: TodoItem, index: number, e: any) => {
-    const updatedItem = todo;
-    updatedItem.isChecked = e.target.checked;
-    updateTodo(todo?.id!, updatedItem);
-  };
-
-  const handleEditClick = (todo: TodoItem) => {
-    navigate(`/manage/${todo.id}/edit`);
-  };
-
+  const handleChangeChecked = useCallback((todo: TodoItem, index: number, e: React.ChangeEvent<HTMLInputElement>) => {
+    const updatedItem = { ...todo, isChecked: e.target.checked }; // Create a new copy of the todo object with the updated value
+    updateTodo(todo.id!, updatedItem); // Pass the updated todo object
+  }, [updateTodo]);
+  
+  const handleEditClick = useCallback((todo: TodoItem) => {
+    navigate(`/manage/${todo.id}/edit`); // Assuming `todo.id` is always available
+  }, [navigate]);
+  
+  const handleDeleteClick = useCallback((todo: TodoItem) => {
+    dialogService.confirmDeleteData(t, () => {
+      deleteTodo(todo.id!); // Ensure `todo.id` is available and passed to `deleteTodo`
+      dialogService.successProceed(t);
+    });
+  }, [deleteTodo, dialogService, t]);
+  
   const tasksLeft = useMemo(() => {
     return todos.filter(x => !x.isChecked).length;
   }, [todos]);
+  
 
   return (
+    <>
+     <Helmet>
+      <title>{t('TASK.TODO_LIST')}</title>
+    </Helmet>
     <div className="p-6 max-w-xl mx-auto border shadow rounded bg-white">
-      <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
+      <h1 className="text-2xl font-bold mb-4">{t('TASK.TODO_LIST')}</h1>
       <div className="flex justify-between mb-4">
         <div>
-          <h5 className="font-bold mb-1">My Tasks</h5>
-          <p className="text-xs text-muted">You have {tasksLeft} tasks left!</p>
+          <h5 className="font-bold mb-1">{t('TASK.MY_TASKS')}</h5>
+          <p className="text-xs text-muted">{t('TASK.YOU_HAVE')} {tasksLeft} {t('TASK.TASKS_LEFT')}!</p>
         </div>
         <div className="flex items-center">
           <Link to="/manage/add" className="bg-primary text-white text-sm px-8 py-2 border rounded">
-            Add Task
+          {t('BUTTON.ADD_TASK')}
           </Link>
         </div>
 
@@ -76,7 +92,7 @@ const TodoListPage = () => {
                           </div>
                         </Tippy>
                       </div>
-                      <p className="text-danger text-sm mt-3">Due : {DateUtils.formatDateStr(todo.dueDate ?? '')}</p>
+                      <p className="text-danger text-sm mt-3">{t('TASK.DUE')} : {DateUtils.formatDateStr(todo.dueDate ?? '')}</p>
                     </div>
                   </div>
 
@@ -90,7 +106,7 @@ const TodoListPage = () => {
                     <Pencil />
                   </button>
                   <button
-                    onClick={() => deleteTodo(todo.id!)}
+                    onClick={() => handleDeleteClick(todo)}
                     className="text-red-600"
                   >
                     <Trash />
@@ -100,9 +116,11 @@ const TodoListPage = () => {
             ))}
           </div>}
 
-        {todos.length === 0 && <p>No Datas</p>}
+        {todos.length === 0 && <p>{t('SHARED.NO_DATAS')}</p>}
       </ul>
     </div>
+    </>
+   
   );
 };
 

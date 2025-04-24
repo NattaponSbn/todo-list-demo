@@ -1,0 +1,39 @@
+{
+    "DIALOG_TITLE.CONFIRM": "Confirm",
+    "DIALOG_TITLE.CONFIRM_DATA": "Confirm",
+    "DIALOG_TITLE.ALERT": "Alert",
+    "DIALOG_TITLE.DELETE": "Delete",
+    "DIALOG_TITLE.RESULT_COMPLETED": "Completed",
+    "DIALOG_TITLE.SAVE_DATA": "Save",
+    "DIALOG_TITLE.SUBMIT_DATA": "Submit",
+
+    "DIALOG_TEXT.CONFIRM": "Are you sure to Confirm?",
+    "DIALOG_TEXT.ALERT": "Alert",
+    "DIALOG_TEXT.DELETE": "Are you sure to Delete?",
+    "DIALOG_TEXT.RESULT_COMPLETED": "Process Completed",
+    "DIALOG_TEXT.SAVE_DATA": "Are you sure to Save Data?",
+    "DIALOG_TEXT.SUBMIT_DATA": "Are you sure to Submit Data?",
+
+    "BUTTON.SAVE": "Save",
+    "BUTTON.BACK": "Back",
+    "BUTTON.ADD": "Add",
+    "BUTTON.CLOSE": "Close",
+    "BUTTON.CONFIRM": "Confirm",
+    "BUTTON.YES": "Yes",
+    "BUTTON.NO": "No",
+    "BUTTON.ADD_TASK": "Add Task",
+    "BUTTON.EDIT_TASK": "Edit Task",
+    "BUTTON.BACKWARD": "Backward",
+
+    "SHARED.NO_DATAS": " No Datas",
+
+    "TASK.TODO_LIST": "To-Do List",
+    "TASK.MY_TASKS": "My Tasks",
+    "TASK.YOU_HAVE": "You have",
+    "TASK.TASKS_LEFT": "tasks left",
+    "TASK.ADD_TASK": "Add Task",
+    "TASK.EDIT_TASK": "Edit Task",
+    "TASK.TITLE": "Title",
+    "TASK.DESCRIPTION": "Description",
+    "TASK.DUE": "Due"
+}

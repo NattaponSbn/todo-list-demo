@@ -4,6 +4,9 @@
 /* custom input*/
 @import './input.css';
 
+/* custom sweetalert*/
+@import './sweetalert.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
